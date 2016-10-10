@@ -15,6 +15,7 @@ find_package(Boost REQUIRED COMPONENTS
 )
 find_package(OpenRAVE REQUIRED)
 find_package(TinyXML2 REQUIRED)
+find_package(TinyXML REQUIRED)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
@@ -27,6 +28,7 @@ catkin_add_env_hooks("20.${PROJECT_NAME}"
 include_directories(
     ${Boost_INCLUDE_DIRS}
     ${catkin_INCLUDE_DIRS}
+    ${TinyXML_INCLUDE_DIRS}
     ${TinyXML2_INCLUDE_DIRS}
     ${OpenRAVE_INCLUDE_DIRS}
 )
@@ -49,6 +51,7 @@ set_target_properties(${PROJECT_NAME}_plugin PROPERTIES
 target_link_libraries("${PROJECT_NAME}_plugin"
     ${catkin_LIBRARIES}
     ${TinyXML2_LIBRARIES}
+    ${TinyXML_LIBRARIES}
     ${OpenRAVE_LIBRARIES}
 )
 

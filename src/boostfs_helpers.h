@@ -18,12 +18,12 @@ namespace boost
 #endif
   {
     template < >
-    path& path::append< typename path::iterator >( typename path::iterator begin, typename path::iterator end, const codecvt_type& cvt)
+      path& path::append< typename path::iterator >( typename path::iterator begin, typename path::iterator end) //, const codecvt_type& cvt)
     { 
       for( ; begin != end ; ++begin )
         *this /= *begin;
       return *this;
-    }
+      }
     
     // Return path when appended to a_From will resolve to same as a_To
     boost::filesystem::path make_relative( boost::filesystem::path a_From, boost::filesystem::path a_To )
